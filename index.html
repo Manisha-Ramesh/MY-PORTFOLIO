@@ -2,107 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manisha R | Portfolio</title>
+    <title>Manisha R | AI & DS Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-    <h2>Manisha R</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<!-- Navbar -->
+<header>
+    <h2 class="logo">Manisha<span>.</span></h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-<!-- Hero Section -->
-<section class="hero">
-    <h1>Hello, I'm <span>Manisha R</span></h1>
-    <p>Artificial Intelligence & Data Science Student</p>
-    <button onclick="scrollToSection('contact')">Hire Me</button>
+<!-- Hero -->
+<section id="home" class="hero">
+    <h1>Hi, I'm <span>Manisha R</span></h1>
+    <h3 class="typing"></h3>
+    <a href="#projects" class="btn">View My Work</a>
 </section>
 
 <!-- About -->
-<section id="about">
+<section id="about" class="section">
     <h2>About Me</h2>
     <p>
-        Passionate Artificial Intelligence & Data Science student with a strong
-        foundation in mathematics, programming, and machine learning.
-        Skilled in Python, SQL, data visualization, and machine learning models.
-        Seeking opportunities to work on data-driven solutions.
+        I am a passionate Artificial Intelligence & Data Science student with
+        strong skills in Python, SQL, Power BI, and Machine Learning.
+        I enjoy solving real-world problems using data-driven solutions.
     </p>
 </section>
 
-<!-- Education -->
-<section id="education">
-    <h2>Education</h2>
-    <div class="card">
-        <h3>B.Tech – Artificial Intelligence & Data Science</h3>
-        <p>RRASE College of Engineering (2023 – 2027)</p>
-        <p>Currently Pursuing – III Year</p>
-    </div>
-
-    <div class="card">
-        <h3>HSC</h3>
-        <p>Swami Dayananda Rotary Matric Hr Sec School</p>
-        <p>79% (2022 – 2023)</p>
-    </div>
-</section>
-
 <!-- Skills -->
-<section id="skills">
+<section id="skills" class="section">
     <h2>Skills</h2>
-    <div class="skills">
+    <div class="skill-box">
         <span>Python</span>
         <span>SQL</span>
         <span>Power BI</span>
-        <span>Data Visualization</span>
         <span>Machine Learning</span>
-        <span>MS Office</span>
-        <span>Problem Solving</span>
-        <span>Team Collaboration</span>
+        <span>Data Visualization</span>
+        <span>Excel</span>
     </div>
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="section">
     <h2>Projects</h2>
-
-    <div class="project-card">
-        <h3>Flight Delay & Cancellation Dashboard</h3>
-        <p>Real-time Power BI dashboard for flight analysis.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Weather Prediction Model</h3>
-        <p>Internship project using Python & ML.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Customer Churn Analysis & Prediction</h3>
-        <p>Internship project – Data Science domain.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Amazon Prime Dashboard</h3>
-        <p>Power BI academic data visualization project.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Sports Performance Analysis</h3>
-        <p>IPL dataset analysis project.</p>
+    <div class="projects">
+        <div class="card">Flight Delay & Cancellation Dashboard</div>
+        <div class="card">Weather Prediction Model</div>
+        <div class="card">Customer Churn Analysis</div>
+        <div class="card">Amazon Prime Power BI Dashboard</div>
+        <div class="card">IPL Sports Performance Analysis</div>
     </div>
 </section>
 
 <!-- Contact -->
-<section id="contact">
-    <h2>Contact Me</h2>
+<section id="contact" class="section">
+    <h2>Contact</h2>
     <p>Email: <a href="mailto:manishamaniramesh2515@gmail.com">manishamaniramesh2515@gmail.com</a></p>
-    <p>Phone: <a href="tel:8925786554">8925786554</a></p>
     <p>
         <a href="https://github.com/ManishaRamesh-25" target="_blank">GitHub</a> |
         <a href="https://linkedin.com/in/manisha-ramesh-0a8930305" target="_blank">LinkedIn</a>
@@ -110,10 +72,9 @@
 </section>
 
 <footer>
-    <p>© 2025 Manisha R | AI & Data Science</p>
+    © 2025 Manisha R | AI & Data Science
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
