@@ -1,6 +1,4 @@
-// Scroll reveal animation
-// Applied ONLY to sections that have the class "reveal"
-// NOT applied to hero text (MANISHA R, subtitle)
+// Scroll reveal animation (NOT for hero text)
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -17,9 +15,5 @@ function revealOnScroll() {
     });
 }
 
-// Run on scroll
 window.addEventListener("scroll", revealOnScroll);
-
-// Run once when page loads
 window.addEventListener("load", revealOnScroll);
-
