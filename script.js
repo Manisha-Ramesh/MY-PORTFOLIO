@@ -1,31 +1,30 @@
-// Typing animation for name
-const text = "MANISHA R";
-let index = 0;
-const speed = 150;
-const element = document.querySelector(".typing-text");
+// Typing animation
+const nameText = "MANISHA R";
+let i = 0;
+const typingEl = document.querySelector(".typing");
 
-element.textContent = "";
+typingEl.textContent = "";
 
-function typeEffect() {
-    if (index < text.length) {
-        element.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, speed);
+function typeName() {
+    if (i < nameText.length) {
+        typingEl.textContent += nameText.charAt(i);
+        i++;
+        setTimeout(typeName, 120);
     }
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+document.addEventListener("DOMContentLoaded", typeName);
 
-// Scroll reveal animation
+// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-    reveals.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            section.style.opacity = 1;
-            section.style.transform = "translateY(0)";
-            section.style.transition = "0.8s ease";
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 80) {
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+            el.style.transition = "0.8s ease";
         }
     });
 });
