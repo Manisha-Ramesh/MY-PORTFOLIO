@@ -1,29 +1,25 @@
-// Typing animation
-const text = "MANISHA R";
-let index = 0;
-const typingEl = document.querySelector(".typing");
-typingEl.textContent = "";
+// Scroll reveal animation
+// Applied ONLY to sections that have the class "reveal"
+// NOT applied to hero text (MANISHA R, subtitle)
 
-function typeEffect() {
-    if (index < text.length) {
-        typingEl.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 120);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", typeEffect);
-
-// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-    reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 80) {
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
-            el.style.transition = "0.8s ease";
+function revealOnScroll() {
+    reveals.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 80) {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+            section.style.transition = "opacity 0.8s ease, transform 0.8s ease";
         }
     });
-});
+}
+
+// Run on scroll
+window.addEventListener("scroll", revealOnScroll);
+
+// Run once when page loads
+window.addEventListener("load", revealOnScroll);
+
