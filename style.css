@@ -6,14 +6,40 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #0f172a, #020617);
+    background: #020617;
     color: #e5e7eb;
     line-height: 1.6;
 }
 
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h2 {
+    color: #3b82f6;
+}
+
+.navbar a {
+    color: #cbd5f5;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #3b82f6;
+}
+
 /* HERO */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,68 +55,43 @@ body {
 
 .subtitle {
     color: #94a3b8;
-    margin: 15px 0;
+    margin-top: 10px;
 }
 
-/* Glow text */
+/* Glow */
 .glow {
-    color: #a855f7;
-    text-shadow: 0 0 20px rgba(168,85,247,0.6);
-    .SKILL {
-    color: #22c55e;
-    text-shadow: 0 0 10px rgba(34,197,94,0.8);
+    color: #3b82f6;
+    text-shadow: 0 0 18px rgba(59,130,246,0.6);
 }
 
-}
-
-/* Buttons */
-.buttons {
-    margin-top: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    margin: 8px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.primary {
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
-    color: black;
-}
-
-.secondary {
-    border: 1px solid #a855f7;
-    color: #a855f7;
-}
-
-/* LOGOS */
-.logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 30px 15px;
-    color: #64748b;
-}
-
-/* SECTIONS */
-.features,
-.projects,
-.insights,
-.cta {
+/* ABOUT */
+.about {
     padding: 60px 20px;
     text-align: center;
 }
 
-h2 span {
-    color: #a855f7;
+.about span {
+    color: #3b82f6;
 }
 
-/* FEATURES */
+.about-tag {
+    color: #60a5fa;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+.about-text {
+    color: #e5e7eb;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* SKILLS */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -105,7 +106,27 @@ h2 span {
     border: 1px solid #1e293b;
 }
 
+/* Skill text */
+.skill-text {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #94a3b8;
+}
+
+.python {
+    color: #22c55e;
+    font-weight: bold;
+}
+
 /* PROJECTS */
+.projects {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -116,33 +137,14 @@ h2 span {
 .project-card {
     background: #0b1220;
     padding: 25px;
-    border-radius: 18px;
+    border-radius: 16px;
     border: 1px solid #1e293b;
+    transition: 0.3s;
 }
 
+/* Highlighted project – no color, only glow */
 .project-card.active {
-    background: linear-gradient(135deg, #7c3aed, #9333ea);
-    color: black;
-}
-
-/* INSIGHTS */
-.insight-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.insight-card {
-    padding: 40px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #3b0764, #6d28d9);
-    font-weight: bold;
-}
-
-/* CTA */
-.cta {
-    padding-bottom: 80px;
+    box-shadow: 0 0 25px rgba(59,130,246,0.6);
 }
 
 /* FOOTER */
@@ -153,7 +155,7 @@ footer {
 }
 
 footer a {
-    color: #a855f7;
+    color: #3b82f6;
     text-decoration: none;
 }
 
@@ -163,46 +165,39 @@ footer a {
     transform: translateY(30px);
 }
 
-/* 🔥 DESKTOP VIEW */
-@media (min-width: 768px) {
+/* POP ANIMATION */
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
+.project-card.active {
+    animation: popIn 0.8s ease-out forwards;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
     .hero h1 {
         font-size: 64px;
     }
 
     .feature-grid,
-    .project-grid,
-    .insight-grid {
+    .project-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .about,
     .features,
-    .projects,
-    .insights,
-    .cta {
+    .projects {
         padding: 80px 120px;
     }
-    /* POP animation for highlighted project */
-@keyframes popIn {
-    0% {
-        transform: scale(0.85);
-        opacity: 0;
-        box-shadow: 0 0 0 rgba(168, 85, 247, 0);
-    }
-    60% {
-        transform: scale(1.08);
-        opacity: 1;
-        box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
-    }
-}
-
-/* Apply animation */
-.project-card.active {
-    animation: popIn 0.9s ease-out forwards;
-}
-
 }
