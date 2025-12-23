@@ -48,14 +48,15 @@ body {
     padding: 40px 20px;
 }
 
-.hero h1 {
+.hero-name {
     font-size: 42px;
     letter-spacing: 3px;
 }
 
-.subtitle {
+.hero-subtitle {
+    margin-top: 12px;
+    font-size: 16px;
     color: #94a3b8;
-    margin-top: 10px;
 }
 
 /* Glow */
@@ -81,9 +82,9 @@ body {
 }
 
 .about-text {
-    color: #e5e7eb;
     max-width: 800px;
     margin: auto;
+    color: #e5e7eb;
 }
 
 /* SKILLS */
@@ -106,7 +107,7 @@ body {
     border: 1px solid #1e293b;
 }
 
-/* Skill text */
+/* SKILL TEXT */
 .skill-text {
     margin-top: 25px;
     display: flex;
@@ -139,12 +140,27 @@ body {
     padding: 25px;
     border-radius: 16px;
     border: 1px solid #1e293b;
-    transition: 0.3s;
 }
 
-/* Highlighted project – no color, only glow */
+/* Highlighted project – glow only */
 .project-card.active {
     box-shadow: 0 0 25px rgba(59,130,246,0.6);
+    animation: popIn 0.8s ease-out forwards;
+}
+
+/* POP ANIMATION */
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* FOOTER */
@@ -165,28 +181,9 @@ footer a {
     transform: translateY(30px);
 }
 
-/* POP ANIMATION */
-@keyframes popIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.project-card.active {
-    animation: popIn 0.8s ease-out forwards;
-}
-
 /* DESKTOP */
 @media (min-width: 768px) {
-    .hero h1 {
+    .hero-name {
         font-size: 64px;
     }
 
