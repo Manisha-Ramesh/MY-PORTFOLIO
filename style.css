@@ -112,11 +112,6 @@ section span {
     color: #94a3b8;
 }
 
-.python {
-    color: #22c55e;
-    font-weight: bold;
-}
-
 /* PROJECTS */
 .project-grid {
     display: grid;
