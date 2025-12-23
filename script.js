@@ -1,4 +1,4 @@
-// Scroll reveal animation (NOT for hero text)
+// Scroll reveal animation (NOT applied to hero text)
 
 const reveals = document.querySelectorAll(".reveal");
 
