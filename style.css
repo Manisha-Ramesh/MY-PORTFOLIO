@@ -182,4 +182,27 @@ footer a {
     .cta {
         padding: 80px 120px;
     }
+    /* POP animation for highlighted project */
+@keyframes popIn {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(168, 85, 247, 0);
+    }
+    60% {
+        transform: scale(1.08);
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
+    }
+}
+
+/* Apply animation */
+.project-card.active {
+    animation: popIn 0.9s ease-out forwards;
+}
+
 }
