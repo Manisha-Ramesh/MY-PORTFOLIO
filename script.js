@@ -21,10 +21,17 @@ const reveals = document.querySelectorAll(".reveal");
 window.addEventListener("scroll", () => {
     reveals.forEach(el => {
         const top = el.getBoundingClientRect().top;
+
         if (top < window.innerHeight - 80) {
             el.style.opacity = 1;
             el.style.transform = "translateY(0)";
             el.style.transition = "0.8s ease";
+
+            // Trigger pop animation for highlighted project
+            const activeCard = el.querySelector(".project-card.active");
+            if (activeCard) {
+                activeCard.style.animation = "popIn 0.9s ease-out forwards";
+            }
         }
     });
 });
