@@ -1,16 +1,31 @@
-// simple fade-in animation
-document.querySelectorAll("section").forEach(sec => {
-    sec.style.opacity = 0;
-    sec.style.transform = "translateY(40px)";
-});
+// Typing animation for name
+const text = "MANISHA R";
+let index = 0;
+const speed = 150;
+const element = document.querySelector(".typing-text");
+
+element.textContent = "";
+
+function typeEffect() {
+    if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, speed);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+// Scroll reveal animation
+const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-    document.querySelectorAll("section").forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
+    reveals.forEach(section => {
+        const top = section.getBoundingClientRect().top;
         if (top < window.innerHeight - 100) {
-            sec.style.opacity = 1;
-            sec.style.transform = "translateY(0)";
-            sec.style.transition = "0.8s";
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+            section.style.transition = "0.8s ease";
         }
     });
 });
